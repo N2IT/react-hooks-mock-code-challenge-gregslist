@@ -1,7 +1,7 @@
 import React from "react";
 
 function ListingCard({ item }) {
-  const { id, description, image, location} = item
+  const { id, description, image, location } = item
   console.log(item)
   return (
     <li className="card">

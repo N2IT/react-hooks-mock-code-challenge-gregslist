@@ -9,17 +9,15 @@ function ListingsContainer() {
       .then((res) => res.json())
       .then((items) => setItems(items))
   }, [])
-  
+
   console.log(items)
 
   return (
     <main>
       <ul className="cards">
-        <li>
         {items.map((listedItem => (
           <ListingCard key={listedItem.id} item={listedItem} />
         )))}
-        </li>
       </ul>
     </main>
   );
