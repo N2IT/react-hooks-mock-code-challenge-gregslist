@@ -1,8 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 
-function ListingCard({ item }) {
+function ListingCard({ item, url }) {
   const { id, description, image, location } = item
-  console.log(item)
+  // console.log(item)
+
+  function handleChange(event) {
+    event.target.classList.toggle('active')
+  }
+
   return (
     <li className="card">
       <div className="image">
@@ -11,9 +16,9 @@ function ListingCard({ item }) {
       </div>
       <div className="details">
         {true ? (
-          <button className="emoji-button favorite active">★</button>
+          <button onClick={handleChange} className="emoji-button favorite active">★</button>
         ) : (
-          <button className="emoji-button favorite">☆</button>
+          <button onClick={handleChange} className="emoji-button favorite">☆</button>
         )}
         <strong>{description}</strong>
         <span> · {location}</span>

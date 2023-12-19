@@ -1,22 +1,21 @@
 import React, { useState, useEffect } from "react";
 import ListingCard from "./ListingCard";
 
-function ListingsContainer() {
+function ListingsContainer({ url }) {
   const [items, setItems] = useState([])
 
   useEffect(() => {
-    fetch("http://localhost:6001/listings")
+    fetch(url)
       .then((res) => res.json())
       .then((items) => setItems(items))
   }, [])
 
-  console.log(items)
 
   return (
     <main>
       <ul className="cards">
         {items.map((listedItem => (
-          <ListingCard key={listedItem.id} item={listedItem} />
+          <ListingCard url={url} key={listedItem.id} item={listedItem} />
         )))}
       </ul>
     </main>
