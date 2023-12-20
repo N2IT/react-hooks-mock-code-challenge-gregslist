@@ -1,6 +1,6 @@
 import React from "react";
 
-function ListingCard({ item, url, itemToDelete }) {
+function ListingCard({ item, itemToDelete }) {
   const { id, description, image, location } = item
   // console.log(item)
 
